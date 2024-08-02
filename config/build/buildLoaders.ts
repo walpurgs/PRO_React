@@ -28,9 +28,9 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 		]
 	}
 
-	const cvgLoader = {
+	const svgLoader = {
 		test: /\.svg$/,
-		use: ["@svgr/webpack"],
+		use: ["@svgr/webpack"]
 	}
 
 	const fileLoader = {
@@ -42,5 +42,17 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 		]
 	}
 
-	return [fileLoader, cvgLoader, typescriptLoader, cssLoader]
+	const babelLoader = {
+		test: /\.(js|jsx|tsx)$/i,
+		exclude: /node_modules/,
+		use: {
+			loader: "babel-loader",
+			options: {
+				presets: ["@babel/preset-env"],
+				plugins: [["i18next-extract", { locales: ["ru", "en"], keyAsDefaultValue: true }]]
+			}
+		}
+	}
+
+	return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader]
 }
