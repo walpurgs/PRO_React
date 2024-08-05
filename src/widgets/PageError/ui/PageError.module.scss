@@ -1,0 +1,26 @@
+.PageError {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff0f3;
+    color: #590d22;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    font-family: consolas, "Times New Roman", serif;
+}
+
+.btnReload {
+    background-color: #590d22;
+    color: #fff0f3;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: all 300ms;
+}
+
+.btnReload:hover {
+    box-shadow: 0 0 10px 0 #a4133c;
+}

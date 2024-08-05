@@ -6,5 +6,7 @@
 	"Язык": "English",
 	"Переключить": "toggle",
 	"Загрузка...": "Loading...",
-	"Страница не найдена": "Not found page"
+	"Страница не найдена": "Not found page",
+	"Произошла непредвиденная ошибка": "An unexpected error occurred",
+	"Обновить страницу": "Reload the page"
 }
