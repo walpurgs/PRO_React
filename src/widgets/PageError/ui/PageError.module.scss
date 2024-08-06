@@ -1,8 +1,8 @@
 .PageError {
     width: 100vw;
     height: 100vh;
-    background-color: #fff0f3;
-    color: #590d22;
+    background-color: var(--bg-color);
+    color: var(--inverted-bg-color);
     display: flex;
     gap: 20px;
     flex-direction: column;
@@ -13,8 +13,8 @@
 }
 
 .btnReload {
-    background-color: #590d22;
-    color: #fff0f3;
+    background-color: var(--inverted-bg-color);
+    color: var(--bg-color);
     border: none;
     border-radius: 5px;
     padding: 5px 10px;
@@ -22,5 +22,5 @@
 }
 
 .btnReload:hover {
-    box-shadow: 0 0 10px 0 #a4133c;
+    box-shadow: 0 0 10px 0 var(--inverted-primary-color);
 }
