@@ -1,13 +1,15 @@
 {
-	"Тестовый перевод": "Test translate",
-	"Перевод": "Translate",
+	"decrement": "decrement",
+	"increment": "increment",
+	"Введите имя": "Enter name",
+	"Введите пароль": "Enter password",
+	"Введите текст": "Enter text",
+	"Войти": "Log In",
 	"Главная": "Home",
 	"О сайте": "About",
-	"Язык": "English",
-	"Переключить": "toggle",
-	"Загрузка...": "Loading...",
-	"Страница не найдена": "Not found page",
-	"Произошла непредвиденная ошибка": "An unexpected error occurred",
 	"Обновить страницу": "Reload the page",
-	"Короткий язык": "En"
+	"Произошла непредвиденная ошибка": "An unexpected error occurred",
+	"Страница не найдена": "Not found page",
+	"Тестовый перевод": "Test translate",
+	"Язык": "English"
 }
