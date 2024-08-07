@@ -35,7 +35,8 @@ module.exports = {
 		"max-len": ['error', {code: 100 }],
 		"jsx-a11y/click-events-have-key-events": 'off',
 		"react-hooks/rules-of-hooks": "error",
-		"react-hooks/exhaustive-deps": "warn"
+		"react-hooks/exhaustive-deps": "warn",
+		'no-param-reassign': 'off',
 	},
 	globals: {
 		__IS_DEV__: true
