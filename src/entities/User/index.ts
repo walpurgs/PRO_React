@@ -1,7 +1,12 @@
-import { userReducer, userActions } from './ui/model/slice/userSlice';
-import { UserSchema, User } from './ui/model/types/user';
-import { getUserAuthData } from './ui/model/selector/getUserAuthData';
+export {
+    getUserAuthData,
+} from './model/selectors/getUserAuthData/getUserAuthData';
 
 export {
-    userReducer, userActions, UserSchema, User, getUserAuthData,
-};
+    userReducer,
+    userActions,
+} from './model/slice/userSlice';
+export {
+    UserSchema,
+    User,
+} from './model/types/user';

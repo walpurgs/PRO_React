@@ -1,17 +1,17 @@
-import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
-import { Input } from 'shared/ui/Input/ui/Input';
+import { useTranslation } from 'react-i18next';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
-import { Text, ThemeText } from 'shared/ui/Text/ui/Text';
-import { loginActions } from '../../model/slice/LoginSlice';
-import { getLoginState } from '../../model/selector/getLoginState/getLoginState';
-import cls from './LoginForm.module.scss';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
+import { loginActions } from '../../model/slice/loginSlice';
+import cls from './LoginForm.module.scss';
+import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 
 interface LoginFormProps {
-	className?: string
+    className?: string;
 }
 
 export const LoginForm = memo(({ className }: LoginFormProps) => {
@@ -31,35 +31,29 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 
     const onLoginClick = useCallback(() => {
         dispatch(loginByUsername({ username, password }));
-    }, [dispatch, username, password]);
+    }, [dispatch, password, username]);
 
     return (
-        <div className={(classNames(cls.LoginForm, {}, [className]))}>
+        <div className={classNames(cls.LoginForm, {}, [className])}>
             <Text title={t('Форма авторизации')} />
-            {error
-                && (
-                    <Text
-                        theme={ThemeText.ERROR}
-                        text={t('Пользователь ввел неверный логин или пароль')}
-                    />
-                )}
+            {error && <Text text={t('Вы ввели неверный логин или пароль')} theme={TextTheme.ERROR} />}
             <Input
                 autofocus
-                placeholder={t('Введите имя')}
                 type="text"
                 className={cls.input}
+                placeholder={t('Введите username')}
                 onChange={onChangeUsername}
                 value={username}
             />
             <Input
-                placeholder={t('Введите пароль')}
                 type="text"
                 className={cls.input}
+                placeholder={t('Введите пароль')}
                 onChange={onChangePassword}
                 value={password}
             />
             <Button
-                theme={ThemeButton.BACKGROUND_INVERTED}
+                theme={ButtonTheme.OUTLINE}
                 className={cls.loginBtn}
                 onClick={onLoginClick}
                 disabled={isLoading}
